@@ -22,4 +22,5 @@ sudo groupadd docker
 # Add the current user to the docker group
 sudo usermod -aG docker $USER
 
+newgrp docker
 
