@@ -1,0 +1,9 @@
+find
+xargs
+sed
+awk
+tr
+grep
+tail
+tldr
+less

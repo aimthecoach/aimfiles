@@ -1,0 +1,297 @@
+window:
+  startup_mode: Windowed
+  opacity: 1
+  dimensions:
+    columns: 100
+    lines: 85
+
+  # Window padding (changes require restart)
+  #
+  # Blank space added around the window in pixels. This padding is not scaled by
+  # DPI and the specified value is always added at both opposing sides.
+  padding:
+    x: 18
+    y: 16
+  decorations: buttonless
+
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: false
+
+  # Window decorations
+  #
+  # Available values:
+  # - full: borders and title bar
+  # - none: neither borders nor title bar
+  # - transparent: title bar, transparent background and title bar buttons
+  # - buttonless: title bar, transparent background, but no title bar buttons
+
+  # Startup Mode (changes require restart)
+  #
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  #
+  # Values for `startup_mode` (macOS only):
+  #   - SimpleFullscreen
+  startup_mode: Maximized
+  alt_send_esc: false
+
+# Font configuration
+font:
+  # Normal (roman) font face
+  normal:
+    # Font family
+    #
+    # Default:
+    #   - (macOS) Menlo
+    #   - (Linux/BSD) monospace
+    #   - (Windows) Consolas
+    family: CaskaydiaCove Nerd Font Mono
+
+  # Point size
+  size: 14.0
+  offset:
+    x: 0
+    y: 0
+  use_thin_strokes: true
+
+  glyph_offset:
+    x: 0
+    y: 0
+key_bindings:
+  - { key: I, mods: Alt, chars: "\x1bi" }
+  - { key: V, mods: Alt, chars: "\x1bv" }
+  - { key: H, mods: Alt, chars: "\x1bh" }
+
+schemes:
+  # Tokyo Night theme, based on both:
+  #   https://github.com/ghifarit53/tokyonight-vim
+  #   https://github.com/enkia/tokyo-night-vscode-theme
+  tokyo-night: &tokyo-night # Default colors
+    primary:
+      background: "0x1a1b26"
+      foreground: "0xa9b1d6"
+
+    # Normal colors
+    normal:
+      black: "0x32344a"
+      red: "0xf7768e"
+      green: "0x9ece6a"
+      yellow: "0xe0af68"
+      blue: "0x7aa2f7"
+      magenta: "0xad8ee6"
+      cyan: "0x449dab"
+      white: "0x787c99"
+
+    # Bright colors
+    bright:
+      black: "0x444b6a"
+      red: "0xff7a93"
+      green: "0xb9f27c"
+      yellow: "0xff9e64"
+      blue: "0x7da6ff"
+      magenta: "0xbb9af7"
+      cyan: "0x0db9d7"
+      white: "0xacb0d0"
+
+  tokyo-night-storm: &tokyo-night-storm # Default colors
+    primary:
+      background: "0x24283b"
+      foreground: "0xa9b1d6"
+
+    # Normal colors
+    normal:
+      black: "0x32344a"
+      red: "0xf7768e"
+      green: "0x9ece6a"
+      yellow: "0xe0af68"
+      blue: "0x7aa2f7"
+      magenta: "0xad8ee6"
+      cyan: "0x449dab"
+      white: "0x9699a8"
+
+    # Bright colors
+    bright:
+      black: "0x444b6a"
+      red: "0xff7a93"
+      green: "0xb9f27c"
+      yellow: "0xff9e64"
+      blue: "0x7da6ff"
+      magenta: "0xbb9af7"
+      cyan: "0x0db9d7"
+      white: "0xacb0d0"
+  nightfly: &nightfly
+    # Default colors
+    primary:
+      background:        '#011627'
+      foreground:        '#acb4c2'
+      bright_foreground: '#eeeeee'
+
+    # Cursor colors
+    cursor:
+      text:   '#080808'
+      cursor: '#9ca1aa'
+
+    # Selection colors
+    selection:
+      text:       '#080808'
+      background: '#b2ceee'
+
+    # Normal colors
+    normal:
+      black:   '#1d3b53'
+      red:     '#fc514e'
+      green:   '#a1cd5e'
+      yellow:  '#e3d18a'
+      blue:    '#82aaff'
+      magenta: '#c792ea'
+      cyan:    '#7fdbca'
+      white:   '#a1aab8'
+
+    # Bright colors
+    bright:
+      black:   '#7c8f8f'
+      red:     '#ff5874'
+      green:   '#21c7a8'
+      yellow:  '#ecc48d'
+      blue:    '#82aaff'
+      magenta: '#ae81ff'
+      cyan:    '#7fdbca'
+      white:   '#d6deeb'
+# "storm" uses a lighter BG color
+# colors: *tokyo-night-storm
+colors: *nightfly
+bell:
+  animation: EaseOutExpo
+  color: '0xffffff'
+  duration: 0
+
+key_bindings:
+  - { key: Comma, mods: Command, chars: "\x02," }
+  - { key: D, mods: Command, chars: "\x02K" }
+  - { key: L, mods: Command, chars: "\x02clear\n" }
+  - { key: P, mods: Command, chars: ":GitFiles\n" }
+  - { key: P, mods: Command|Shift, chars: ":Commands\n" }
+  - { key: G, mods: Command, chars: "\x02g" }
+  - { key: K, mods: Command, chars: "\x02s" }
+  - { key: Key1, mods: Command, chars: "\x021" }
+  - { key: Key2, mods: Command, chars: "\x022" }
+  - { key: Key3, mods: Command, chars: "\x023" }
+  - { key: Key4, mods: Command, chars: "\x024" }
+  - { key: Key5, mods: Command, chars: "\x025" }
+  - { key: Key6, mods: Command, chars: "\x026" }
+  - { key: Key7, mods: Command, chars: "\x027" }
+  - { key: Key8, mods: Command, chars: "\x028" }
+  - { key: Key9, mods: Command, chars: "\x029" }
+  # - { key: L, mods: Command, chars: "\x02L" }
+  - { key: LBracket, mods: Command, chars: "\x02[" }
+  - { key: LBracket, mods: Command|Shift, chars: "\x02p" }
+  - { key: O, mods: Command, chars: "\x02u" }
+  - { key: E, mods: Command|Shift, chars: "\x02%" }
+  - { key: E, mods: Command, chars: "\x02\"" }
+  - { key: Q, mods: Command, chars: ":q\n" }
+  - { key: RBracket, mods: Command|Shift, chars: "\x02n" }
+  - { key: S, mods: Command, chars: ":w\n" }
+  - { key: S, mods: Command|Shift, chars: ":wa\n" }
+  - { key: Semicolon, mods: Command, chars: "\x02:" }
+  - { key: T, mods: Command, chars: "\x02c" }
+  - { key: J, mods: Command, chars: "\x02\x54" }
+  - { key: W, mods: Command, chars: "\x02x" }
+  - { key: Z, mods: Command, chars: "\x02z" }
+mouse:
+  # Click settings
+  #
+  # The `double_click` and `triple_click` settings control the time
+  # alacritty should wait for accepting multiple clicks as one double
+  # or triple click.
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+
+  # If this is `true`, the cursor is temporarily hidden when typing.
+  hide_when_typing: true
+
+  # URL launcher
+  # url:
+    # This program is executed when clicking on a text which is recognized as a URL.
+    # The URL is always added to the command as the last parameter.
+    #
+    # When set to `None`, URL launching will be disabled completely.
+    #
+    # Default:
+    #   - (macOS) open
+    #   - (Linux) xdg-open
+    #   - (Windows) explorer
+    # launcher:
+    #   program: xdg-open
+    #   args: []
+
+    # These are the modifiers that need to be held down for opening URLs when clicking
+    # on them. The available modifiers are documented in the key binding section.
+    # modifiers: Control|Shift
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard: false
+
+# Mouse bindings
+#
+# Available fields:
+# - mouse
+# - action
+# - mods (optional)
+#
+# Values for `mouse`:
+# - Middle
+# - Left
+# - Right
+# - Numeric identifier such as `5`
+#
+# All available `mods` and `action` values are documented in the key binding
+# section.
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+cursor:
+  # Cursor style
+  #
+  # Values for 'style':
+  #   - ▇ Block
+  #   - _ Underline
+  #   - | Beam
+  style: Block
+
+  # If this is `true`, the cursor will be rendered as a hollow box when the
+  # window is not focused.
+  unfocused_hollow: true
+
+# dynamic_title: false
+
+# Live config reload (changes require restart)
+live_config_reload: true
+
+debug:
+  # Should display the render timer
+  render_timer: false
+
+  # Keep the log file after quitting Alacritty.
+  persistent_logging: false
+
+  # Log level
+  #
+  # Values for `log_level`:
+  #   - OFF
+  #   - ERROR
+  #   - WARN
+  #   - INFO
+  #   - DEBUG
+  #   - TRACE
+  log_level: OFF
+
+  # Print all received window events.
+  print_events: false
+
+  # Record all characters and escape sequences as test data.
+  ref_test: false
